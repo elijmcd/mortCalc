@@ -1,0 +1,106 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 200px;
+    background: #355C7D;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #C06C84, #6C5B7B, #355C7D);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #C06C84, #6C5B7B, #355C7D);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px;
+    /* Vertically center the text there */
+    background-color: #355C7D;
+    color: darkgoldenrod;
+}
+
+body>.container {
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 4px;
+    grid-auto-flow: column;
+}
+
+.footer>.container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#inputForm {
+justify-content: center;
+    border: solid 1px red;
+}
+
+#displayTable {
+    object-position: center;
+    border: solid 1px red;
+}
+
+h1 {
+    text-align: center;
+    font-size: xx-large;
+    font-weight:900;
+}
+
+#paymentAmount {
+    text-align: center;
+    font-weight: 600;
+    font-size: x-large ;
+}
+
+.form-group>input {
+    justify-content: right;
+    object-position: right;
+}
+
+form {
+    display: table;
+}
+
+p {
+    display: table-row;
+}
+
+label {
+    display: table-cell;
+}
+
+input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: table-cell;
+}
+
+#inputForm {
+    object-fit: cover;
+    object-position: center;
+}
+
+#calcBtn {
+    object-position: bottom right;
+}
+
+.card {
+    margin-top: 60px;
+}
