@@ -97,10 +97,10 @@ input {
     object-position: center;
 }
 
-#calcBtn {
-    object-position: bottom right;
-}
-
 .card {
     margin-top: 60px;
+}
+
+div {
+    border: 1px solid red;
 }

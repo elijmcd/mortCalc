@@ -56,18 +56,19 @@
                     <div class="col-md-4" id="inputForm">
                         <form>
                             <p>
-                                <label for="amount">Loan Amount: </label>
-                                <input id="amount" type="number">
+                                <label for="inAmount">Loan Amount: </label>
+                                <input id="inAmount" type="number">
                             </p>
                             <p>
-                                <label for="term">Loan Term: </label>
-                                <input id="term" type="number">
+                                <label for="inTerm">Loan Term: </label>
+                                <input id="inTerm" type="number">
                             </p>
                             <p>
-                                <label for="interest">Interest Rate: </label>
-                                <input id="interest" type="number">
+                                <label for="inRate">Interest Rate: </label>
+                                <input id="inRate" type="text">
                             </p>
-                            <button class="btn btn-success" id="calcBtn" onclick="calculate()">Calculate</button>
+                            <button class="btn btn-success" id="calcBtn"
+                                onclick="calculateMortgage()">Calculate</button>
                         </form>
                         <!-- <form>
                             <div class="form-group form-inline">
@@ -87,14 +88,8 @@
                     <div class="col-md-8" id="displayTable">
                         <table class="table table-striped">
                             <thead>
-                                <tr>
-                                    <td scope="row">
-                                        <h1>Your Monthly Payment</h1>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row" id="paymentAmount">$0.00</td>
-                                </tr>
+                                <h1><b>Total Monthly Payment: </b></h1><br>
+                                <p><b><span id="monthlyPayment"></span>$ 0.00</b></p>
                             </thead>
                             <tbody>
                                 <tr>
@@ -155,7 +150,8 @@
                         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                         crossorigin="anonymous">
                     </script>
-                    <script src="/js/site.js"></script>
+                    <!-- <script src="/js/site.js"></script> -->
+                    <script src="/js/calc.js"></script>
             </div>
         </div>
     </main>
