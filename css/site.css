@@ -4,8 +4,9 @@ html {
 }
 
 body {
+    margin-top: 100px;
     /* Margin bottom by footer height */
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     background: #355C7D;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #C06C84, #6C5B7B, #355C7D);
@@ -28,6 +29,9 @@ body {
 }
 
 body>.container {
+        padding-left: 250px;
+        padding-right: 250px;
+
     padding: 60px 0;
     display: flex;
     align-items: center;
@@ -48,25 +52,25 @@ body>.container {
 }
 
 #inputForm {
-justify-content: center;
-    border: solid 1px red;
+    justify-content: center;
+    /* border: solid 1px red; */
 }
 
 #displayTable {
     object-position: center;
-    border: solid 1px red;
+    /* border: solid 1px red; */
 }
 
 h1 {
     text-align: center;
     font-size: xx-large;
-    font-weight:900;
+    font-weight: 900;
 }
 
 #paymentAmount {
     text-align: center;
     font-weight: 600;
-    font-size: x-large ;
+    font-size: x-large;
 }
 
 .form-group>input {
@@ -78,9 +82,9 @@ form {
     display: table;
 }
 
-p {
+/* p {
     display: table-row;
-}
+} */
 
 label {
     display: table-cell;
@@ -98,9 +102,105 @@ input {
 }
 
 .card {
-    margin-top: 60px;
+    border: 2px solid darkgoldenrod;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 div {
     border: 1px solid red;
+}
+
+#amortizationTable {
+    border-collapse: separate;
+    border: solid darkgoldenrod 1px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    /* border: solid 1px darkgoldenrod; */
+    /* border-radius: 10px; */
+    min-width: 100%;
+    /* background: #417d35; */
+    background: #417d35;
+    object-fit: center;
+    justify-content: center;
+}
+
+#amortizationTable th {
+    text-align: center;
+    font-size: x-large;
+    font-weight: 100;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: gold;
+    background-color: #355C7D;
+    text-shadow: yellowgreen 1px 1px 7px;
+    border: 3px solid darkgoldenrod;
+    border-style: groove;
+    border-radius: 7px;
+}
+
+#amortizationTable td {
+    text-align: center;
+    font-size: large;
+    color: aliceblue;
+    object-fit: center;
+    justify-content: center;
+    border: 3px solid darkgoldenrod;
+    border-style: groove;
+    border-radius: 3px;
+}
+
+#inputForm {
+    background-color: floralwhite;
+    border: 3px outset groove darkgoldenrod;
+    color: #355C7D;
+    padding: 30px;
+    object-position: center;
+    justify-content: center;
+}
+
+#results {
+    border: 3px outset groove darkgoldenrod;
+    padding: 30px;
+    align-self: left;
+    background-color: floralwhite;
+    color: #355C7D;
+    object-fit: center;
+    text-align: center;
+    justify-content: center;
+    font-size: x-large
+}
+
+h1 {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 900;
+    color: goldenrod;
+    font-family: serif;
+    /* color: goldenrod; */
+        /* color: #417d35; */
+        text-shadow: #417d35 1px 3px 7px;
+        font-stretch: expanded;
+
+}
+
+.inputRow {
+    padding-left: 60px;
+    padding-right: 60px;
+    justify-content: center;
+}
+
+#monthlyPayment {
+    font-size: xx-large;
+}
+
+p.title {
+    text-align: center;
+    color: goldenrod;
+    text-shadow: yellowgreen 1px 1px 7px;
+}
+
+.introRow {
+justify-content:right;
 }

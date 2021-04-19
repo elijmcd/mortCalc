@@ -14,34 +14,73 @@
 </head>
 
 <body>
-    <div>
-        <h1>Mortgage Calculator</h1>
-        <div class="row">
-            <div class="col">
-                <p><b>Loan Amount</b>: <input type="text" id="inAmount" value="100000"></p>
-                <p><b>Interest Rate</b>: <input type="text" id="inRate" value="3.5"></p>
-                <p><b>Loan Term</b>: <input type="text" id="inTerm" value="5"></p>
-                <p><button class="btn btn-success" id="calculate" onclick="calculatePayment(); return false">Calculate
-                        Payments</button>
-                </p>
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">MortCalc</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/calc.html">The App</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/code.html">See the Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="//github.com/elijmcd" target="_blank">Get the Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="//www.dougaldev.net" target="_blank">My Portfolio</a>
+                    </li>
+                </ul>
             </div>
-            <div class="col results">
-                <p><b>Total Monthly Payment: <span id="monthlyPayment"></span></b></p>
-                <p><b>Paid Toward Interest: <span id="interestPaid"></span></b></p>
-                <p><b>Paid Toward Principal: <span id="principalPay"></span></b></p>
+        </nav>
+    </header>
+
+    <div>
+        <div class="container">
+            <h1><b> 💀Mortgage Calculator💸</b></h1>
+            <div class="row inputRow">
+                <div class="col-lg-3 card shadow" id="inputForm">
+                    <p><b>Loan Amount</b>: <br>
+                        <input type="text" id="inAmount" value="100000"></p>
+                    <p><b>Interest Rate</b>: <br>
+                        <input type="text" id="inRate" value="3.5"></p>
+                    <p><b>Loan Term</b>: <br>
+                        <input type="text" id="inTerm" value="5"></p>
+                    <p><button class="btn btn-success" id="calculate"
+                            onclick="calculatePayment(); return false">Calculate
+                            Payments</button>
+                    </p>
+                </div>
+                <div class="col-lg-8 card shadow" id="results">
+                    <p><b>Monthly Payment Amount </b></p>
+                    <span id="monthlyPayment"></span>
+                    <br>
+                    <p style="text-align: left;"><u>Principal</u>: <span style="text-justify: right;"
+                            id="principalAmt"></span></b></p>
+                    <p style="text-align: left;"><u>Interest Paid</u>: <span id="interestTotal"></span></b></p>
+                    <p style="text-align: left;"><u>Total Cost</u>: <span id="costTotal"></span></b></p>
+                </div>
             </div>
         </div>
     </div>
     <hr>
-    <hr>
-    <div>
-        <table class="table-fluid table-striped" id="amortizationTable">
+    <div class="container">
+        <table class="shadow table-fluid table-striped" id="amortizationTable">
             <thead class="thead-dark">
                 <tr>
                     <th>Month</th>
-                    <th>Total Paid</th>
-                    <th>Monthly Payment</th>
-                    <th>Interest Paid</th>
+                    <th>Payment Amt.</th>
+                    <th>Principal Payment</th>
+                    <th>Interest Payment</th>
                     <th>Total Interest Paid</th>
                     <th>Remaining Balance</th>
                 </tr>
