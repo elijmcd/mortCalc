@@ -21,7 +21,7 @@ body {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 60px;
+    height: 65px;
     line-height: 60px;
     /* Vertically center the text there */
     background-color: #355C7D;
@@ -174,7 +174,7 @@ div {
 
 h1 {
     text-align: center;
-    font-size: xx-large;
+    font-size: 48px;
     font-weight: 900;
     color: goldenrod;
     font-family: serif;
@@ -203,4 +203,18 @@ p.title {
 
 .introRow {
 justify-content:right;
+}
+
+.landingPage {
+    background-size: cover;
+    background-image: url(/img/graveHouse.jpg);
+}
+
+#topRowLanding {
+    flex: auto;
+    object-position: right;
+}
+
+#introductionCard {
+    object-fit: cover;
 }

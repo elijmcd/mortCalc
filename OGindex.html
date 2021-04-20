@@ -2,21 +2,22 @@
 <html lang="en">
 
 <head>
-    <title>Mortgage Calculator | Eli McDougal</title>
+
+    <title>Mortgage Calc</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons -->
+    <link href="/img/favicon.ico" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/site.css">
-        <link rel="stylesheet" href="/css/devicons.css">
-        <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
-
 </head>
 
-<body>
+<body class="landingPage">
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -27,10 +28,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/calc.html">The App</a>
                     </li>
                     <li class="nav-item">
@@ -46,75 +47,47 @@
             </div>
         </nav>
     </header>
-
-    <div>
-        <div class="container">
-            <h1><b> 💀Mortgage Calculator💸</b></h1>
-            <div class="row inputRow">
-                <div class="col-lg-3 card shadow" id="inputForm">
-                    <p><b>Loan Amount</b>: <br>
-                        <input type="text" id="inAmount" value="100000"></p>
-                    <p><b>Interest Rate</b>: <br>
-                        <input type="text" id="inRate" value="3.5"></p>
-                    <p><b>Loan Term</b>: <br>
-                        <input type="text" id="inTerm" value="5"></p>
-                    <p><button class="btn btn-success" id="calculate"
-                            onclick="calculatePayment(); return false">Calculate
-                            Payments</button>
-                    </p>
+    <main role="main">
+        <div class="container-fluid" id="topRowLanding">
+            <div class="row" id="introRow">
+                <!-- <div class="col-lg-6 doggy">
+                    <img src="/img/SuperDogEvents.png" class="img-fluid p-2 ">
+                </div> -->
+                <div class="col-lg-6 card shadow" id="introductionCard">
+                    <div class="row">
+                        <div class="col-12 card shadow" id="introCardTop">
+                            <hr style="width:100%">
+                            <h1 style="width:100%;">💀Mortgage Calculator💸</h1>
+                            <hr >
+                            SuperDog Events is an event company the produces comic book conventions. They have requested
+                            an
+                            app to display statistics from their past events. There is a table of initial data to start,
+                            with the
+                            ability for the user to input additional events as desired.
+                            <br><br>
+                        </div>
+                        <div class="col-12 card shadow" id="introCardBase">
+                            <br>
+                            SuperDog Events was created using<br>
+                            <span class="devicons">&#xe636 &#xe649 &#xe647 &#xe650 &#xe64e</span>
+                            <br>
+                        </div>
+                    </div>                  
                 </div>
-                <div class="col-lg-8 card shadow" id="results">
-                    <p><b>Monthly Payment Amount </b></p>
-                    <span id="monthlyPayment"></span>
-                    <br>
-                    <p style="text-align: left;"><u>Principal</u>: <span style="text-justify: right;"
-                            id="principalAmt"></span></b></p>
-                    <p style="text-align: left;"><u>Interest Paid</u>: <span id="interestTotal"></span></b></p>
-                    <p style="text-align: left;"><u>Total Cost</u>: <span id="costTotal"></span></b></p>
+            </div>
+            <div class="row bottomRow">
+                <div class="col-fluid card shadow" style="min-height:100px">
+                    <p></p>
                 </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <div class="container">
-        <table class="shadow table-fluid table-striped" id="amortizationTable">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Month</th>
-                    <th>Payment Amt.</th>
-                    <th>Principal Payment</th>
-                    <th>Interest Payment</th>
-                    <th>Total Interest Paid</th>
-                    <th>Remaining Balance</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
-                <!-- insert data here -->
-            </tbody>
-        </table>
-    </div>
+    </main>
 
-
-
-
-
-    <template id="dataTemplate">
-        <tr>
-            <td id="month"></td>
-            <td id="totalPaid"></td>
-            <td id="principalPaid"></td>
-            <td id="interestPaid"></td>
-            <td id="totalInterestPaid"></td>
-            <td id="remainingBalance"></td>
-        </tr>
-    </template>
-
-    <footer class="footer footer">
+    <footer class="footer">
         <div class="container-fluid">
             <span>.Mortgage Calculator. | &copy; Eli McDougal | 2021</span>
         </div>
     </footer>
-
 
 
     <!-- Optional JavaScript -->
@@ -128,7 +101,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <script src="/js/calc.js"></script>
+    <script src="/js/site.js"></script>
+
 </body>
 
 </html>

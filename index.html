@@ -1,27 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <title>Mortgage Calc</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Favicons -->
-    <link href="/img/favicon.ico" rel="icon">
-    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/site.css">
+    <title>Mortgage Calculator | Eli McDougal</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i"
+        rel="stylesheet">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/landingPage.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/devicons.css">
+    <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">MortCalc</a>
+            <a class="navbar-brand" href="#">Mortgage Calculator</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -47,61 +57,76 @@
             </div>
         </nav>
     </header>
-    <main role="main">
-        <div class="container-fluid">
-            <div class="row" id="introRow">
-                <!-- <div class="col-lg-6 doggy">
-                    <img src="/img/SuperDogEvents.png" class="img-fluid p-2 ">
-                </div> -->
-                <div class="col-lg-6 card shadow" id="introductionCard">
-                    <div class="row">
-                        <div class="col-12 card shadow" id="introCardTop">
-                            <hr style="width:100%">
-                            <h1>💀Mortgage Calculator💸</h1>
-                            <hr style="width:100%;">
-                            SuperDog Events is an event company the produces comic book conventions. They have requested
-                            an
-                            app to display statistics from their past events. There is a table of initial data to start,
-                            with the
-                            ability for the user to input additional events as desired.
-                            <br><br>
+
+    <div class="overlay"></div>
+
+    <div class="masthead">
+        <div class="masthead-bg"></div>
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 my-auto">
+                    <div class="masthead-content text-white py-5 py-md-0">
+                        <h1></h1>
+                        <div class="ml-5 card shadow"
+                            style="border: 3px goldenrod inset; padding: 10px; border-radius: 100px 0;">
+                            <h1 class="mb-3">💀Mortgage Calculator💸</h1>
                         </div>
-                        <div class="col-12 card shadow" id="introCardBase">
-                            <br>
-                            SuperDog Events was created using<br>
-                            <span class="devicons">&#xe636 &#xe649 &#xe647 &#xe650 &#xe64e</span>
-                            <br>
-                        </div>
-                    </div>                  
-                </div>
-            </div>
-            <div class="row bottomRow">
-                <div class="col-fluid card shadow" style="min-height:100px">
-                    <p></p>
+                        <br><br>
+                        <p class="mb-5 card shadow"
+                            style="border: 3px goldenrod inset; padding: 30px 30px 0 30px; border-radius: 100px 0;">
+                            The
+                            Mortgage Calculator is a tool to build
+                            an amortization schedule for loan repayment.<br>
+                            The user inputs a loan amount, interest rate, and term, and the calculator does the
+                            rest.<br>
+                            Give it a shot!<br><br>
+                            <button class="btn btn-secondary" type="button" id="submit-button"
+                                style="margin-left: 50px; margin-right: 90px;">Try the Calculator</button><br>
+                            <div class="ml-5 card shadow" style="border: 3px goldenrod inset; border-radius: 70px 0; margin-bottom: 20px;">
+                                <p style="padding-right: 60px;"><br>
+                                    <span class="devicons">&#xe636 &#xe649 &#xe647 &#xe650 &#xe64e</span>
+                                </p>
+                            </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+    </div>
+    </div>
 
-    <footer class="footer">
-        <div class="container">
-            <span>.SuperDog. | &copy; Eli McDougal | 2021</span>
+    <div class="social-icons">
+        <ul class="list-unstyled text-center mb-0">
+            <li class="list-unstyled-item">
+                <a href="https://twitter.com/dougaldev" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <li class="list-unstyled-item">
+                <a href="https://www.linkedin.com/in/dougaldev/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            <li class="list-unstyled-item">
+                <a href="https://github.com/elijmcd/mortCalc" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <footer class="footer footer">
+        <div class="container-fluid">
+            <span>.Mortgage Calculator. | &copy; Eli McDougal | 2021</span>
         </div>
     </footer>
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <script src="/js/site.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/coming-soon.min.js"></script>
 
 </body>
 

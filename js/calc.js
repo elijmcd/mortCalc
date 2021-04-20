@@ -124,29 +124,35 @@ function displayData(payArray) {
 
         dataRow.getElementById("month").textContent = payArray[i].month;
         dataRow.getElementById("totalPaid").textContent = payArray[i].totalPaid.toLocaleString('en-US', {
-            style: 'decimal',
-            minimumFractionDigits: '2',
-            maximumFractionDigits: '2',
+            style: 'currency',
+            currency: 'USD'
+
+            // minimumFractionDigits: '2',
+            // maximumFractionDigits: '2',
         });
         dataRow.getElementById("principalPaid").textContent = payArray[i].principalPaid.toLocaleString('en-US', {
-            style: 'decimal',
-            minimumFractionDigits: '2',
-            maximumFractionDigits: '2',
+            style: 'currency',
+            currency: 'USD'
+            // minimumFractionDigits: '2',
+            // maximumFractionDigits: '2',
         });
         dataRow.getElementById("interestPaid").textContent = payArray[i].interestPaid.toLocaleString('en-US', {
-            style: 'decimal',
-            minimumFractionDigits: '2',
-            maximumFractionDigits: '2',
+            style: 'currency',
+            currency: 'USD'
+            // minimumFractionDigits: '2',
+            // maximumFractionDigits: '2',
         });
         dataRow.getElementById("totalInterestPaid").textContent = payArray[i].totalInterestPaid.toLocaleString('en-US', {
-            style: 'decimal',
-            minimumFractionDigits: '2',
-            maximumFractionDigits: '2',
+            style: 'currency',
+            currency: 'USD'
+            // minimumFractionDigits: '2',
+            // maximumFractionDigits: '2',
         });
         dataRow.getElementById("remainingBalance").textContent = payArray[i].remainingBalance.toLocaleString('en-US', {
-            style: 'decimal',
-            minimumFractionDigits: '2',
-            maximumFractionDigits: '2',
+            style: 'currency',
+            currency: 'USD'
+            // minimumFractionDigits: '2',
+            // maximumFractionDigits: '2',
         });
 
         body.appendChild(dataRow);
