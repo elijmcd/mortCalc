@@ -51,7 +51,6 @@ function calculatePayment() {
         return false;
     }
     let rate = parseFloat(document.getElementById("inRate").value);
-    //TODO regex here to remove potential % chars?
     rate = rate / 1200;
     let term = parseFloat(document.getElementById("inTerm").value);
     term = term * 12;

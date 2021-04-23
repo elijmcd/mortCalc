@@ -14,8 +14,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/site.css
-    ">
+    <link rel="stylesheet" href="/css/site.css">
+    <link href="/css/prismDark.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -49,7 +50,175 @@
         </nav>
     </header>
     <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col h3 text-center">
+                    <br>
+                    Mortgage Calculator
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2">
+                    <div class="accordion shadow" id="scriptMarkUp">
+                        <div class="card shadow">
+                            <div class="card-header" id="headingOne">
+                                <div class="card shadow col-12 col-lg-4 offset-lg-4 text-center">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-info" type="button" data-toggle="collapse"
+                                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Function to Calculate the Payment Data (Or: One Function To Rule Them All)
+                                        </button>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#scriptMarkUp">
+                                <div class="card-body">
+                                    <pre><code class="language-javascript">function calculatePayment() {
 
+    let principal = document.getElementById("inAmount").value;
+    if (principal == "") {
+        alert("Please enter an amount for the loan.");
+        return false;
+    } else if (principal < 0) { 
+        alert("Invalid loan amount, please enter a non-negative number.") 
+        return false; 
+    } 
+
+    let rate = parseFloat(document.getElementById("inRate").value);
+    rate=rate / 1200; 
+    let term=parseFloat(document.getElementById("inTerm").value);
+    term=term * 12;
+    let monthlyPayment=principal * rate / (1 - (1 + rate) ** (-term));
+
+    let principalPaid=0;
+    let interestPaid=0;
+    let balance=principal; 
+    let remainingBalance=0; 
+    remainingBalance=balance - principalPaid; 
+
+    let totalInterest=0; 
+    let totalPaid=0; 
+
+    let payArray=[]; 
+
+    for (let i = 1; i <= term; i++) { 
+        totalPaid=totalPaid + monthlyPayment; 
+        interestPaid=remainingBalance * rate; 
+        principalPaid=monthlyPayment - interestPaid; 
+        totalInterest +=interestPaid; 
+        remainingBalance -=principalPaid;
+
+        let obj=addToArray(i, monthlyPayment, principalPaid, interestPaid, totalInterest, remainingBalance);
+
+        payArray.push(obj); 
+    }; 
+
+    let payAmount=document.getElementById("monthlyPayment"); 
+    payAmount.innerText="$" + (Math.round(monthlyPayment * 100) / 100).toFixed(2); 
+    let principalAmt=document.getElementById("principalAmt"); 
+    principalAmt.innerText="$" + parseFloat(principal); 
+    let interestPay=document.getElementById("interestTotal"); 
+    interestPay.innerText="$" + (Math.round(totalInterest * 100) / 100).toFixed(2);
+    let costTotal=document.getElementById("costTotal");
+    costTotal.innerText="$" + (Math.round((parseFloat(principal) + totalInterest) * 100) / 100).toFixed(2);
+   
+    displayData(payArray); 
+};</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card shadow">
+                            <div class="card-header" id="headingTwo">
+                                <div class="card shadow col-12 col-lg-4 offset-lg-4 text-center">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-info collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            Function to Assemble Payment Data into an Object
+                                        </button>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#scriptMarkUp">
+                                <div class="card-body">
+                                    <pre><code class="language-js">function addToArray(month, totalPaid, principalPaid, interestPaid, totalInterest, remainingBalance) {
+    let obj = {};
+    obj["month"] = month;
+    obj["totalPaid"] = totalPaid;
+    obj["principalPaid"] = principalPaid;
+    obj["interestPaid"] = interestPaid;
+    obj["totalInterestPaid"] = totalInterest;
+    obj["remainingBalance"] = remainingBalance;
+
+    return obj;
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card shadow">
+                            <div class="card-header" id="headingThree">
+                                <div class="card shadow col-12 col-lg-4 offset-lg-4 text-center">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-info collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            Displaying the Payment Data in the Table
+                                        </button>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#scriptMarkUp">
+                                <div class="card-body">
+                                    <pre><code class="language-js">function displayData(payArray) {
+
+    const template = document.getElementById("dataTemplate");
+    const body = document.getElementById("tableBody");
+
+    body.innerHTML = "";
+
+    for (let i = 0; i < payArray.length; i++) {
+        const dataRow = document.importNode(template.content, true);
+
+        dataRow.getElementById("month").textContent = payArray[i].month;
+        dataRow.getElementById("totalPaid").textContent = payArray[i].totalPaid.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        });
+
+        dataRow.getElementById("principalPaid").textContent = payArray[i].principalPaid.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        });
+
+        dataRow.getElementById("interestPaid").textContent = payArray[i].interestPaid.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        });
+        
+        dataRow.getElementById("totalInterestPaid").textContent = payArray[i].totalInterestPaid.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        });
+        
+        dataRow.getElementById("remainingBalance").textContent = payArray[i].remainingBalance.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        });
+
+        body.appendChild(dataRow);
+    };
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">
@@ -70,6 +239,8 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="/js/site.js"></script>
+    <script src="/js/prismDark.js"></script>
+
 
 </body>
 

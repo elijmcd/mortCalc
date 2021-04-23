@@ -218,3 +218,9 @@ justify-content:right;
 #introductionCard {
     object-fit: cover;
 }
+
+#headingOne>div{
+    object-position: center;
+    object-fit: contain;
+    text-align: center;
+}
